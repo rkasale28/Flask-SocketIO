@@ -4,7 +4,9 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET')
+
 socketio = SocketIO(app)
+socketio.init_app(app, cors_allowed_origins="*")
 
 @app.route('/')
 def home():
