@@ -23,6 +23,6 @@ def messageReceived(methods=['GET', 'POST']):
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     socketio.emit('my response', json, callback=messageReceived)
-    
+
 if __name__=="__main__":
-    socketio.run(app, debug=True)
+    socketio.run(app, cors_allowed_origins=['http://url', 'https://url'])
