@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import os
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET')
 socketio = SocketIO(app)
 
 @app.route('/')
