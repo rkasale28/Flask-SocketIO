@@ -25,4 +25,4 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     socketio.emit('my response', json, callback=messageReceived)
 
 if __name__=="__main__":
-    socketio.run(app, cors_allowed_origins=['http://url', 'https://url'])
+    socketio.run(app, cors_allowed_origins=['http://url', 'https://url'], host='0.0.0.0', port=5000)
